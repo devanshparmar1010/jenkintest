@@ -42,7 +42,7 @@ pipeline {
 
     post {
         success {
-            echo 'CI Pipeline passed successfully.'
+            echo 'CIPipeline passed successfully.'
         }
         failure {
             echo 'CI Pipeline failed. Check logs above.'
