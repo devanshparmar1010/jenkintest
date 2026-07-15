@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { DollarSign, PiggyBank, Percent, Activity, TrendingUp } from 'lucide-react';
-import { formatCurrency, formatPercent, getScoreColor } from '../../lib/utils';
+import { getScoreColor } from '../../lib/utils';
 import type { DashboardResponse } from '../../types';
 import { useEffect, useState } from 'react';
 
@@ -66,8 +66,8 @@ export function SummaryCards({ data }: { data: DashboardResponse }) {
               <span className={textColor}>
                 <AnimatedCounter
                   value={value}
-                  prefix={card.prefix || ''}
-                  suffix={card.suffix || ''}
+                  prefix={'prefix' in card ? card.prefix : ''}
+                  suffix={'suffix' in card ? card.suffix : ''}
                 />
               </span>
             </p>
