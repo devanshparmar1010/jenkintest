@@ -34,7 +34,7 @@ pipeline {
             steps {
                 dir('analytics') {
                     bat 'pip install -r requirements.txt'
-                    bat 'python -c "import pandas, numpy, prophet; print(\"Dependencies OK\")"'
+                    bat 'python validate_deps.py'
                 }
             }
         }
