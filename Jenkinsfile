@@ -45,7 +45,7 @@ pipeline {
             echo 'CIPipeline passed successfully.'
         }
         failure {
-            echo 'CI Pipeline failed. Check logs above.'
+            echo 'CI Pipelinefailed. Check logs above.'
         }
     }
 }
