@@ -38,6 +38,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Docker - Build Images') {
+           steps {
+                bat 'docker compose build'
+            }
+}
+
     }
 
     post {
