@@ -1,0 +1,25 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./analytics/data:/app/data
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  analytics:
+    build: ./analytics
+    volumes:
+      - ./analytics/data:/app/data
+    depends_on:
+      - backend
+    command: tail -f /dev/null
